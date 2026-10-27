@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PriceDrop — Instamart price &amp; District booking alerts</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔻</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>PriceDrop</h1>
+    <p class="sub">Instamart price drops &amp; District booking opens → email alert</p>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <main>
+    <section class="panel">
+      <h2>Find a product</h2>
+      <form id="search-form" class="search-row" autocomplete="off">
+        <input id="search-input" type="text" placeholder="e.g. amul milk, maggi, tata salt" required>
+        <button id="search-btn" type="submit">Search</button>
+      </form>
+      <p id="search-status" class="status" hidden></p>
+      <div id="results" class="grid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Tracking <span id="tracker-count" class="count"></span></h2>
+        <div class="actions">
+          <button id="check-all" class="ghost" type="button">Check now</button>
+          <button id="test-email" class="ghost" type="button">Test email</button>
+        </div>
+      </div>
+      <p id="tracker-status" class="status" hidden></p>
+      <div id="trackers" class="tracked"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Movie booking alerts <span id="dx-count" class="count"></span></h2>
+        <div class="actions">
+          <button id="dx-check-all" class="ghost" type="button">Check now</button>
+        </div>
+      </div>
+
+      <div class="pickers">
+        <div class="picker">
+          <label for="dx-movie">Movie</label>
+          <input id="dx-movie" type="text" placeholder="e.g. jana nayagan" autocomplete="off">
+          <div id="dx-movie-list" class="picklist" hidden></div>
+        </div>
+        <div class="picker">
+          <label for="dx-theatre">Theatre</label>
+          <input id="dx-theatre" type="text" placeholder="e.g. pvr velachery" autocomplete="off">
+          <div id="dx-theatre-list" class="picklist" hidden></div>
+        </div>
+      </div>
+
+      <div id="dx-chosen" class="chosen" hidden></div>
+      <p id="dx-status" class="status" hidden></p>
+      <div id="dx-watches" class="tracked"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Deals <span id="dl-count" class="count"></span></h2>
+        <div class="actions">
+          <button id="dl-sweep" class="ghost" type="button">Sweep now</button>
+          <button id="dl-email" class="ghost" type="button">Email these deals</button>
+        </div>
+      </div>
+      <p class="hint">
+        Products selling below <span id="dl-ratio">60%</span> of what they
+        <em>usually</em> sell for &mdash; measured against their own price history,
+        not MRP.
+      </p>
+      <p id="dl-status" class="status" hidden></p>
+      <div id="dl-deals" class="tracked"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div id="foot"></div>
+    <div id="dx-foot"></div>
+    <div id="dl-foot"></div>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>

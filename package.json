@@ -1,0 +1,19 @@
+{
+  "name": "pricedrop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Monitor Swiggy Instamart product prices at your location, and get an email when District opens booking for a movie at your theatre.",
+  "scripts": {
+    "start": "node --no-warnings src/server.js",
+    "login": "node --no-warnings src/swiggy/login.js",
+    "discover": "node --no-warnings scripts/discover.js",
+    "district": "node --no-warnings scripts/district-discover.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16",
+    "playwright": "^1.49.1"
+  }
+}
